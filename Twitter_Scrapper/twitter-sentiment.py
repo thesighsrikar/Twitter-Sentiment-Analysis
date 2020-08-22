@@ -110,18 +110,18 @@ class TweetAnalyzer():
 
 if __name__ == "__main__":
 	
-	# hashtag_list = ["Sushant Singh Rajput", "SSR", "MSD", "Mahendra Singh Dhoni"]
-	# fetched_tweets_filename = "tweets.json"
+	hashtag_list = ["Sushant Singh Rajput", "SSR", "MSD", "Mahendra Singh Dhoni"]
+	fetched_tweets_filename = "tweets_raw.json"
 
 	# twitter_client = TwitterClient('pycon')
 	# print(twitter_client.get_user_timeline_tweets(1))
-	# twitter_streamer = TwitterStreamer()
-	# twitter_streamer.stream_tweets(fetched_tweets_filename, hashtag_list)
-	api = TwitterClient().get_twitter_client_api()
-	tweets = api.user_timeline(screen_name='elonmusk', count=21)
+	twitter_streamer = TwitterStreamer()
+	twitter_streamer.stream_tweets(fetched_tweets_filename, hashtag_list)
+	# api = TwitterClient().get_twitter_client_api()
+	# tweets = api.user_timeline(screen_name='elonmusk', count=21)
  
 	# print(dir(tweets[0])) # Gives us the types of information that we can extract from each tweet
  
-	df = TweetAnalyzer().tweets_to_dataframe(tweets)
-	print(df.head())
+	# df = TweetAnalyzer().tweets_to_dataframe(tweets)
+	# print(df.head())
 	
